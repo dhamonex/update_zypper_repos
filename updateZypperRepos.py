@@ -43,7 +43,7 @@ def createRepositories(args):
         uri = repoParts[8].strip().replace(args.prevDist, args.distribution)
         
         parsedUrl = urlparse(uri)
-        if parsedUrl.scheme == "hd":
+        if parsedUrl.scheme == "hd" or parsedUrl.scheme == "cd":
             continue
         
         response = requests.get(uri)
