@@ -18,7 +18,7 @@ def getRepositories(stdin):
     if stdin:
         return sys.stdin.readlines()
     
-    return subprocess.check_output(["zypper", "lr", "-d"]).splitlines()
+    return subprocess.check_output(["zypper", "lr", "-d"], encoding="utf-8").splitlines()
 
 def createRepositories(args):
     userCheck(args.dryRun)
